@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/newslist/newslist",
+    "pages/logs/logs",
+    "pages/newscontent/newscontent",
+    "pages/test/test"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#008080",
+    "navigationBarTitleText": "英文阅读",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh":true
+  }
+}

@@ -1,0 +1,39 @@
+<!--test.wxml
+<span class="h1"  data-hi="hello" bindtap="tapName" >hello </span>
+<span class="h1"  data-hi="world" bindtap="tapName" >world </span>
+<span class="h1"  data-hi="pass" bindtap="tapName" >pass</span>
+
+<view class="classname">{{news_content}}</view>
+
+<block wx:for="{{newsArray}}" wx:for-item="word" wx:key="*this">
+  <span style="{{style[word]}}" data-hi="{{word}}" bindtap="tapName">{{word}} </span>
+</block>
+-->
+<view class="container">
+ <block wx:for="{{news_content}}" wx:for-item="content" wx:key="this ">
+    <view class="itme "> 
+       <block wx:for="{{content.words}}" wx:for-item="word" wx:key="this ">
+       <span style="{{style[word]}}" data-hi="{{word}}" bindtap="tapName">{{word}} </span>
+        </block>
+    </view>
+  </block>
+
+
+<div class="bottom_box" wx:if="{{showTipDlg}}">
+  <div class="bottom">
+    <h>{{selected_word}} {{ word_phonetic }}</h>
+    <ul id="repeat-explains" class="content">
+      <block wx:for="{{word_explains}}" wx:for-item="explain" wx:key="*this">
+        <li>
+          {{ explain }}
+        </li>
+      </block>
+
+    </ul>
+  </div>
+  <div class="close">
+    <h class="close_h3" bindtap="closeTip">X</h>
+  </div>
+</div>
+
+</view>

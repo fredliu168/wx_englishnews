@@ -1,0 +1,42 @@
+<!--pages/newslist/newslist.wxml-->
+<view class="container">
+ 
+  <view class="itme">
+    <navigator url="/pages/newscontent/newscontent?NewsId={{firstNew.NewsId}}&Title={{firstNew.urlEncodeTitle}}&Source={{ firstNew.Source }}">
+
+      <image style="width: {{imagewidth}}px; height: {{imageheight}}px;padding-right:4px;" src="{{firstNew.image}}" bindload="imageLoad"></image>
+
+
+      <view class="h2">
+        <text>{{firstNew.Title}}</text>
+      </view>
+      <view class="h3">
+        <text>单词:{{firstNew.WordCount}} 难度:{{ firstNew.HardWeight }} 来源:{{ firstNew.Source }} 阅读量:{{ firstNew.ReadCount }}</text>
+      </view>
+    </navigator>
+  </view>
+
+
+  <block wx:for="{{news_list}}" wx:for-item="new" wx:if="{{index>0}}" wx:key="new">
+
+    <view class="itme">
+      <navigator url="/pages/newscontent/newscontent?NewsId={{new.NewsId}}&Title={{new.urlEncodeTitle}}&Source={{ new.Source }}">
+        <view class="row">
+          <view class="col-xs-8">
+            <view class="h2">
+              <text>{{new.Title}}</text>
+            </view>
+            <view class="h3">
+              <text>单词:{{new.WordCount}} 难度:{{ new.HardWeight }} 来源:{{ new.Source }} 阅读量:{{ new.ReadCount }}</text>
+            </view>
+          </view>
+          <image class="col-xs-4" style="width: {{screenWidth*0.3}}px; height: {{screenWidth*0.2}}px;" src="{{new.image_s}}" mode='aspectFit'></image>
+        </view>
+      </navigator>
+    </view>
+
+
+  </block>
+
+
+</view>

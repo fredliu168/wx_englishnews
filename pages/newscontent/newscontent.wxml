@@ -1,0 +1,41 @@
+<!--newscontent.wxml  <text class="h1">{{Title}}</text>-->
+<view class="container"  bindtap="tapContainer"> 
+
+  <view class="itme">
+    <view class="h1">
+      <block wx:for="{{Title_words}}" wx:for-item="title" wx:key="this ">
+        <span style="{{style[title]}}" data-hi="{{title}}" bindtap="tapName">{{title}} </span>
+      </block>
+    </view>
+    <view class="h3">
+      <text>来源:{{Source}}</text>
+    </view>
+    <image style="width: {{imagewidth}}px; height: {{imageheight}}px;padding-top:4px;padding-right:4px;"  src="{{new_image_url}}" bindload="imageLoad"></image>
+  </view>
+
+  <block wx:for="{{news_content}}" wx:for-item="content" wx:key="this ">
+    <view class="itme ">
+      <block wx:for="{{content.words}}" wx:for-item="word" wx:key="this ">
+        <span style="{{style[word]}}" data-hi="{{word}}" bindtap="tapName">{{word}} </span>
+      </block>
+    </view>
+  </block>
+
+  <div class="bottom_box" wx:if="{{showTipDlg}}">
+    <div class="bottom">
+      <h>{{selected_word}} {{ word_phonetic }}</h>
+      <ul id="repeat-explains" class="content">
+        <block wx:for="{{word_explains}}" wx:for-item="explain" wx:key="*this">
+          <li>
+            {{ explain }}
+          </li>
+        </block>
+
+      </ul>
+    </div>
+    <div class="close">
+      <h class="close_h3" bindtap="closeTip">X</h>
+    </div>
+  </div>
+
+</view>

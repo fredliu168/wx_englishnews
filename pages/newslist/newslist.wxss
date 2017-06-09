@@ -1,0 +1,52 @@
+/* pages/newslist/newslist.wxss */
+
+.container {
+  font-size: 20px;
+  background-color: #ddd;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rpx 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.42857143;
+  color: #333;
+}
+
+.h3 {
+  display: block;
+  font-size: 10px;
+  margin: 0px;
+  color: rgba(0, 0, 0, 0.41);
+  padding-top: 4px;
+}
+
+
+
+.itme {
+  padding: 10px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  width: 100%;
+  display: block;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.row {
+  display: block;
+}
+
+.col-xs-8 {
+  float: left;
+  width: 67%;
+}
+
+.col-xs-4 {
+  float: left;
+  position: relative;
+  min-height: 1px;
+}
